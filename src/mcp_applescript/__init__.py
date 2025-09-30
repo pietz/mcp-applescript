@@ -35,7 +35,7 @@ async def run_applescript(
     """
     Execute an `osascript` command on the macOS host of the user and returns the output.
     Access is limited to allowed apps and dangerous commands are blocked by default.
-    Output is limited to 10k characters by default. Consider this in your command.
+    Output is limited to 10,000 characters by default to prevent context overload.
     Returns the output from the script execution.
     """
     timeout = int(os.getenv("TIMEOUT", "30"))
