@@ -36,7 +36,6 @@ async def run_applescript(
     Execute AppleScript commands on macOS.
     Use 'tell application "AppName"' to control apps. Multi-line scripts supported.
     Returns plain text output, truncated to 10,000 chars for large results.
-    Access limited to allowed apps (configure ALLOWED_APPS). Dangerous operations blocked.
     """
     timeout = int(os.getenv("TIMEOUT", "30"))
     max_output = int(os.getenv("MAX_OUTPUT", "10000"))
