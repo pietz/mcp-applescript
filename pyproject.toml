@@ -1,6 +1,6 @@
 [project]
 name = "mcp-applescript"
-version = "0.1.0"
+version = "0.1.1"
 description = "An MCP server that enables LLMs to execute AppleScript commands on macOS"
 readme = "README.md"
 authors = [
