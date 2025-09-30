@@ -33,10 +33,10 @@ async def run_applescript(
     script: str = Field(description="AppleScript code to execute."),
 ) -> str:
     """
-    Execute an `osascript` command on the macOS host of the user and returns the output.
-    Access is limited to allowed apps and dangerous commands are blocked by default.
-    Output is limited to 10,000 characters by default to prevent context overload.
-    Returns the output from the script execution.
+    Execute AppleScript commands on macOS.
+    Use 'tell application "AppName"' to control apps. Multi-line scripts supported.
+    Returns plain text output, truncated to 10,000 chars for large results.
+    Access limited to allowed apps (configure ALLOWED_APPS). Dangerous operations blocked.
     """
     timeout = int(os.getenv("TIMEOUT", "30"))
     max_output = int(os.getenv("MAX_OUTPUT", "10000"))
